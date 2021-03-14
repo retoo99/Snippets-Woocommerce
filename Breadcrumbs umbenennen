@@ -1,0 +1,7 @@
+/* Breadcrumb statt Startseite Deine tolle Seite anzeigen*/
+add_filter( 'woocommerce_breadcrumb_defaults', 'ts_change_breadcrumb_home_text',20);
+function ts_change_breadcrumb_home_text( $defaults) {
+// Change the breadcrumb home text from 'Home' to 'SuperStore'
+$defaults['home'] = 'Deine tolle Seite';
+return $defaults;
+}
