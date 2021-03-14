@@ -1,0 +1,14 @@
+/* Variable Product ab Preis anstatt von bis */
+/**
+ * Format price range.
+ *
+ * @param string $price
+ * @param float  $from
+ * @param float  $to
+ *
+ * @return string
+ */
+function iconic_format_price_range( $price, $from, $to ) {
+    return sprintf( '%s: %s', __( 'ab', 'iconic' ), wc_price( $from ) );
+} 
+add_filter( 'woocommerce_format_price_range', 'iconic_format_price_range', 10, 3 ); 
