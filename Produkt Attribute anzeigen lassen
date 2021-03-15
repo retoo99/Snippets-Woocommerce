@@ -1,0 +1,17 @@
+dd_action('woocommerce_shop_loop_item_title', 'wotom_show_attributes_title', 15);
+function wotom_show_attributes_title()
+{
+ global $product, $post;
+    $ab1 = $product->get_attribute ('pa_weingut');
+    $ab2 = $product->get_attribute ('pa_rebsorte');
+    $ab3 = $product->get_attribute ('pa_dac-lage');
+    $ab4 = $product->get_attribute ('pa_jahrgang');
+    echo "<div class='erste'><h1 class='shoppage_header1'>" . __($ab1,'woocommerce') . "</h1></div>";
+    echo "<div class='zweite'><h1 class='shoppage_header2'>" . __($ab2,'woocommerce') . "</h1></div>";
+    echo "<div class='dritte'><h2 class='shoppage_sub1'>&nbsp;" . __($ab3,'woocommerce') . "</h2></div>";
+    echo "<div class='vierte'><h2 class='shoppage_sub2'>&nbsp;" . __($ab4,'woocommerce') . "</h2></div>";
+    // Get the WC_Product_Variable instance Object
+   //$product = wc_get_product( $post->ID ); // Works for any product type
+   // Displaying the formatted "Min" - "Max" price range
+//echo $product->get_price_html();
+}
